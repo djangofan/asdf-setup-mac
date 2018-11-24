@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DIRECTORY=$HOME/.asdf
+JAVA_VERSION=oracle-8.191
 
 if [[ ! -d "$DIRECTORY" ]]; then
   brew install openssl
@@ -15,8 +16,9 @@ fi
 # java
 asdf plugin-add java
 #asdf list-all java
-asdf install java oracle-8.191
-asdf global java oracle-8.191
+asdf install java $JAVA_VERSION
+asdf global java $JAVA_VERSION
+echo -e "\nJAVA_HOME=$HOME/.asdf/installs/java/$JAVA_VERSION" >> ~/.bash_profile
 java -version
 
 # nodejs https://github.com/asdf-vm/asdf-nodejs
@@ -53,4 +55,4 @@ asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
 #asdf list-all python
 asdf install python 3.7.1
 asdf global python 3.7.1
-python -v
+python --version
