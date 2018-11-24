@@ -18,13 +18,13 @@ asdf plugin-add java
 #asdf list-all java
 asdf install java $JAVA_VERSION
 asdf global java $JAVA_VERSION
-echo -e "\nJAVA_HOME=$HOME/.asdf/installs/java/$JAVA_VERSION" >> ~/.bash_profile
+echo -e "\nJAVA_HOME=$DIRECTORY/installs/java/$JAVA_VERSION" >> ~/.bash_profile
 java -version
 
 # nodejs https://github.com/asdf-vm/asdf-nodejs
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 #asdf list-all nodejs
-bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+bash "$DIRECTORY/plugins/nodejs/bin/import-release-team-keyring"
 asdf install nodejs 11.2.0
 asdf global nodejs 11.2.0
 npm -v
